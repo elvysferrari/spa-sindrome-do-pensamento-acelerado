@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-left>Minhas Perguntas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item (click)="viewRespostas(questao)" *ngFor="let questao of questoes">
+      <div style="display: flex; flex-direction: column">
+        <div class="label-item-title">
+          {{ questao.titulo }}
+        </div>
+        <div class="label-item-date">
+          Publicada em: {{ questao.publicadaEm | date:'dd/MM/yyyy HH:mm'}}
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+
+  <ion-fab style="padding-bottom: 35px;" vertical="bottom" horizontal="end" edge slot="fixed">
+    <ion-fab-button (click)="sendPergunta()" style="width: 48px; height: 48px;">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button> 
+  </ion-fab>
+
+</ion-footer>

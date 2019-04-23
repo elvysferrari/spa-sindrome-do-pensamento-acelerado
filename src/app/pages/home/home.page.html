@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>  
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngIf="firstLogin">
+    <ion-card-content style="background: #fff">
+      <p style="font-size: 12px;">
+        Você já parou e analisou quantas vezes no dia você se irrita somente
+        pelo fato de não conseguir realizar uma tarefa rápidamente, ou pelo fato de
+        esperar resultados rápidos a todo momento.
+        Nunca pessoas tiveram uma mente tão estressada, agitada e angustiada como nesse século.
+        Vivemos numa sociedade urgente, rápida e ansiosa.
+        Paciência e tolerância nos dias de hoje são uma virtude.
+        Conhecemos muitas pessoas nas redes socias, mas raramente conhecemos a fundo alguém,
+        ficamos mais felizes e interessados em quantas curtidas uma postagem teve do que um abraço
+        amigo.
+        Você já parou pra pensar se essa vida social virtual realmente importa?
+        a maioria das pessoas que curtem suas fotos não estão nem um pouco interessados em como você se sente,
+        você é só mais um rosto bonito aparecendo na tela do celular.
+        Antes de começar a navegar pelo App, pare por alguns segundos e reflita por quais motivos te trouxeram
+        a procurar um App sobre isso.
+      </p>
+      <br>
+      <ion-button (click)="continuar()" expand="full" color="primary">Continuar</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+  <div *ngIf="!firstLogin" style="display: flex; flex-direction: row; flex-wrap: wrap">
+    <ion-card class="cards">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/ajuda.jpg">
+          </div>
+          <div>
+            Ajuda
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="cards">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/ajuda.jpg">
+          </div>
+          <div>
+            Ajuda
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="cards">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/ajuda.jpg">
+          </div>
+          <div>
+            Ajuda
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="cards">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/ajuda.jpg">
+          </div>
+          <div>
+            Ajuda
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="cards">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/ajuda.jpg">
+          </div>
+          <div>
+            Ajuda
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="cards">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/ajuda.jpg">
+          </div>
+          <div>
+            Ajuda
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="cards">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/ajuda.jpg">
+          </div>
+          <div>
+            Ajuda
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="cards">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/ajuda.jpg">
+          </div>
+          <div>
+            Ajuda
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

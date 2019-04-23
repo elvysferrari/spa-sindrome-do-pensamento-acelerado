@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Minha conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user" padding>
+  <ion-list>
+    <ion-item style="padding-left: 30%" lines="none">
+      <ion-avatar [ngStyle]="{'background-color' : user.image != 'assets/images/noavatar.png' ? 'transparent' : '#826fc2'}"
+        style="width: 100px; height: 100px;">
+        <img [src]="user.image">
+      </ion-avatar>
+      
+    </ion-item>
+    <ion-item style="padding-left: 25%" lines="none">
+        <ion-chip (click)="selectPhotoType()" color="primary">
+          <ion-icon name="reverse-camera"></ion-icon>
+          <ion-label>Trocar foto</ion-label>
+        </ion-chip>
+      </ion-item>
+    <ion-item style="padding-left: 10px">
+
+      <ion-label style="color: #666; font-size: 16px" class="labels" position="stacked">Nome *<span style="font-size: 12px; color:red">  mín. 4</span></ion-label>
+      <ion-input [(ngModel)]="user.name" class="labels" placeholder="Dígite seu nome"></ion-input>
+
+    </ion-item>
+    <ion-item lines="none" (click)="redefinirSenha()">
+      <ion-chip color="primary">
+        <ion-icon name="mail"></ion-icon>
+        <ion-label>Redefinir senha</ion-label>
+      </ion-chip>
+    </ion-item>
+    <ion-item lines="none" (click)="logout()">
+      <ion-chip color="primary">
+        <ion-icon name="exit"></ion-icon>
+        <ion-label>Sair da conta</ion-label>
+      </ion-chip>
+    </ion-item>
+  </ion-list>
+  <ion-button shape="round" (click)="onSubmit()" [disabled]="(user.name.length < 4 || user.name.length > 30)" expand="full" color="primary">Salvar
+  </ion-button>
+  <!-- <ion-fab style="padding-bottom: 35px;" vertical="top" horizontal="end" edge slot="fixed">
+      <ion-fab-button (click)="selectPhotoType()" style="width: 38px; height: 38px;">
+        <ion-icon name="send"></ion-icon>
+      </ion-fab-button>
+    </ion-fab> -->
+</ion-content>

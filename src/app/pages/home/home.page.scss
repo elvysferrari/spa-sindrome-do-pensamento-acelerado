@@ -1,0 +1,51 @@
+.text-div{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  height: 50px;
+  padding-top: 15px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 2px rgba(0,0,0,.12);
+}
+
+.card-div{
+  display: flex; 
+  flex-direction: row
+}
+
+.cards{
+  background: #fff;
+  width: 48.7%;
+  height: 50px;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0,0,0,.12);
+}
+.cards-content{
+  padding-inline-start: 0px;
+  padding-inline-end: 5px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  font-size: 10px;
+}
+ion-content{
+  /* --background: url('/assets/images/background.png'); */
+  --background: rgb(224, 221, 222);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .sc-ion-card-ios-s img {        
+    max-width: 100%;
+  }  
+} 
+img {
+  width: 60%;
+}

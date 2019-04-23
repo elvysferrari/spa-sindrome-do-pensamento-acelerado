@@ -1,5 +1,7 @@
 {
   "name": "SPA - Sindrome do Pensamento Acelerado",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

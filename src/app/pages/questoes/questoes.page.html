@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-title text-left>Perguntas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+    <ion-slides #slide style="height: 100%;"  (ionSlideReachEnd)="sliderEnd($event)" scrollbar="false" pager="false" [options]="slideOpts">
+        <ion-slide> 
+          <div class="content"> 
+            <div class="title-top">Ajude o próximo</div>
+            <div style="padding-top: 15px" class="text-middle">Ajude a responder as dúvidas que as outras pessoas tem sobre ansiedade.</div>
+            <div style="padding-top: 15px; color: #d48b8b" class="text-middle">(Atenção, as perguntas e as respostas são de responsabilidade dos usários que as fazem.)</div>        
+            <div style="width: 100%; text-align: -webkit-center; font-size: 1rem">            
+              <!-- <ion-img style="height:64px; width:64px; align-items: center" src="assets/images/chat.png"></ion-img>  --> 
+              <ion-img style="height:96px; width:96px; align-items: center" src="assets/images/maos.png"></ion-img>            
+            </div>
+            <div class="text-bottom">
+              <ion-button color="tertiary" (click)="nextSlide()" expand="full">COMEÇAR</ion-button>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide *ngFor="let questao of questoes"> 
+          <div class="content"> 
+            <div style="width: 100%; text-align: center; font-size: 1rem">
+              <ion-list>
+                
+                  <p style="font-size: 12px; font-family: monospace" color="dark">{{ questao?.titulo }}</p> 
+                
+                <br>  
+                <ion-card class="card-comment">
+                    <ion-card-content class="card-content-comment">
+                      <ion-textarea style="background-color: #efeff1; height: 120px; text-align: left; padding-left: 10px" color="dark" [(ngModel)]="resposta" type="text" placeholder="Resposta .... "></ion-textarea>
+                      <ion-fab style="padding-bottom: 35px;" vertical="bottom" horizontal="end" edge slot="fixed">
+                        <ion-fab-button (click)="sendResposta()" style="width: 38px; height: 38px;">
+                          <ion-icon name="send"></ion-icon>
+                        </ion-fab-button>
+                      </ion-fab>
+                    </ion-card-content>
+                  </ion-card>  
+                  <div style="padding-top: 20px" (click)="nextSlide()">
+                      <ion-label style="font-size: 20px; color: #666">Pular</ion-label>
+                      <ion-icon style="font-size: 20px; color: #666; margin-bottom: -4px" slot="start" name="arrow-forward"></ion-icon>                                            
+                    </div>            
+              </ion-list>
+            </div>            
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="content">
+            <div class="title-top">Você respondeu todas as perguntas.</div>
+            
+            <div style="width: 100%; text-align: -webkit-center; font-size: 1rem; padding-top: 25px">            
+                <!-- <ion-img style="height:64px; width:64px; align-items: center" src="assets/images/chat.png"></ion-img>  --> 
+                <ion-img style="height:96px; width:96px; align-items: center" src="assets/images/chat.png"></ion-img>            
+              </div>
+            
+          </div>
+        </ion-slide>
+      </ion-slides>
+</ion-content>
