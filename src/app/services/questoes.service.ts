@@ -2,6 +2,7 @@ import { Questao } from './../models/questao';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { QuestaoResposta } from '../models/questao-resposta';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,11 @@ export class QuestoesService {
 
     getRespostas(questaoId: string){
       return this.firestore.collection('questaorespostas', ref => ref.where('questaoId', '==', questaoId)).snapshotChanges();
+    }
+
+    createResposta(questaoResposta: QuestaoResposta) {    
+      const questaorespostaJson = JSON.parse(JSON.stringify(questaoResposta));
+      return this.firestore.collection('questaorespostas').add(questaorespostaJson);
     }
     
     

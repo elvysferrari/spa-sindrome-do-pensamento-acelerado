@@ -5,6 +5,7 @@ import { AlertController, ToastController, LoadingController } from '@ionic/angu
 import { QuestoesService } from 'src/app/services/questoes.service';
 import * as firebase from 'firebase/app';
 import { UserService } from 'src/app/services/user.service';
+import { QuestaoResposta } from 'src/app/models/questao-resposta';
 
 @Component({
   selector: 'app-questoes',
@@ -27,10 +28,10 @@ export class QuestoesPage implements OnInit {
     private userService: UserService,
     public toastController: ToastController,
     public loadingController: LoadingController) {
-      this.userService.getLogged().subscribe((user: User) => {
-        this.user = user;
-      }) 
-     }
+    this.userService.getLogged().subscribe((user: User) => {
+      this.user = user;
+    })
+  }
 
   async ngOnInit() {
     const loading = await this.loadingController.create({
@@ -39,49 +40,77 @@ export class QuestoesPage implements OnInit {
     });
 
     await loading.present();
-  /*   this.questaoService.getAllQuestoes().subscribe(async (data) => {
-      this.questoes = data.map(e => {     
-           
-        return {
-          id: e.payload.doc.id,          
-          ...e.payload.doc.data()
-        } as Questao;
-      }).filter(x => x.userId != this.user.id && x.status != "Aguardando aprovação").sort((a: any, b: any) => {
-        return a.publicadaEm > b.publicadaEm ? -1 : 1;
-      });
-      
-      await loading.dismiss();  
-    }) */
+    /*   this.questaoService.getAllQuestoes().subscribe(async (data) => {
+        this.questoes = data.map(e => {     
+             
+          return {
+            id: e.payload.doc.id,          
+            ...e.payload.doc.data()
+          } as Questao;
+        }).filter(x => x.userId != this.user.id && x.status != "Aguardando aprovação").sort((a: any, b: any) => {
+          return a.publicadaEm > b.publicadaEm ? -1 : 1;
+        });
+        
+        await loading.dismiss();  
+      }) */
     this.questaoService.getAllQuestoes().subscribe(async (data) => {
-      this.questoes = data.map(e => {     
-           
+      this.questoes = data.map(e => {
+
         return {
-          id: e.payload.doc.id,          
+          id: e.payload.doc.id,
           ...e.payload.doc.data()
         } as Questao;
       }).sort((a: any, b: any) => {
         return a.publicadaEm > b.publicadaEm ? -1 : 1;
       });
-      
-      await loading.dismiss();  
+
+      await loading.dismiss();
     })
 
     this.slide.lockSwipes(true);
   }
 
-  nextSlide(){
+  nextSlide() {
     this.slide.lockSwipes(false)
-    this.slide.slideNext();  
+    this.slide.slideNext();
     this.slide.lockSwipes(true);
   }
 
-  sendResposta(){
-    this.slide.lockSwipes(false)
-    this.slide.slideNext();  
-    this.slide.lockSwipes(true);
+  async sendResposta(questao: Questao) {
+    const loading = await this.loadingController.create({
+      message: 'enviando',
+      showBackdrop: true
+    });
+    await loading.present();
+
+    let timestamp = firebase.firestore.Timestamp.now().toDate();
+    let questaoResposta: QuestaoResposta = new QuestaoResposta();
+    questaoResposta.questaoId = questao.id;
+    questaoResposta.resposta = this.resposta;
+    questaoResposta.userId = this.user.id;
+    questaoResposta.userName = this.user.name;
+    questaoResposta.respondidaEm = timestamp;
+
+    this.questaoService.createResposta(questaoResposta).then(async (r) => {
+      await loading.dismiss();
+      this.resposta = "";
+      this.slide.lockSwipes(false)
+      this.slide.slideNext();
+      this.slide.lockSwipes(true);
+    }).catch(async (error) => {
+      await loading.dismiss();
+      const toast = await this.toastController.create({
+        message: error,
+        position: 'top',
+        duration: 2000
+      });
+      toast.present();
+    })
+
+
   }
 
-  sliderEnd(evt){
+  sliderEnd(evt) {
 
   }
 

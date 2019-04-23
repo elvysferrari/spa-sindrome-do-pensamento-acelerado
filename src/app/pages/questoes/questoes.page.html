@@ -35,7 +35,7 @@
                     <ion-card-content class="card-content-comment">
                       <ion-textarea style="background-color: #efeff1; height: 120px; text-align: left; padding-left: 10px" color="dark" [(ngModel)]="resposta" type="text" placeholder="Resposta .... "></ion-textarea>
                       <ion-fab style="padding-bottom: 35px;" vertical="bottom" horizontal="end" edge slot="fixed">
-                        <ion-fab-button (click)="sendResposta()" style="width: 38px; height: 38px;">
+                        <ion-fab-button (click)="sendResposta(questao)" style="width: 38px; height: 38px;">
                           <ion-icon name="send"></ion-icon>
                         </ion-fab-button>
                       </ion-fab>

@@ -5,6 +5,7 @@ import { AlertController, ToastController, LoadingController } from '@ionic/angu
 import { QuestoesService } from 'src/app/services/questoes.service';
 import * as firebase from 'firebase/app';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-minhas-questoes',
@@ -18,7 +19,8 @@ export class MinhasQuestoesPage implements OnInit {
               private questaoService: QuestoesService,
               private userService: UserService,
               public toastController: ToastController,
-              public loadingController: LoadingController) { 
+              public loadingController: LoadingController,
+              private route: Router) { 
 
                 this.userService.getLogged().subscribe((user: User) => {
                   this.user = user;
@@ -48,7 +50,7 @@ export class MinhasQuestoesPage implements OnInit {
   }
 
   viewRespostas(questao: Questao){
-    
+    this.route.navigate(['/view-respostas', questao.id])
   }
 
   async sendPergunta(){

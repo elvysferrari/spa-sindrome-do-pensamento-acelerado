@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-left>Respostas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="comment-box">
+    <ion-card class="cards" *ngFor="let resposta of respostas">
+      <ion-card-content class="cards-content">
+        <div style="display: flex; flex-direction: column">
+          <div style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px">
+            <div style="width: 95%">
+              <p class="card-date" slot="start">
+                <span>Respondida em: {{ resposta.respondidaEm | date : 'dd/MM/yyyy HH:mm'}}</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <p style="font-size: 12px;">{{ resposta.resposta  }}</p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

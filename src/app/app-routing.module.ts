@@ -16,6 +16,8 @@ const routes: Routes = [
   { path: 'minha-conta', loadChildren: './pages/minha-conta/minha-conta.module#MinhaContaPageModule' },
   { path: 'questoes', loadChildren: './pages/questoes/questoes.module#QuestoesPageModule' },
   { path: 'minhas-questoes', loadChildren: './pages/minhas-questoes/minhas-questoes.module#MinhasQuestoesPageModule' },
+  { path: 'view-respostas/:id', loadChildren: './pages/view-respostas/view-respostas.module#ViewRespostasPageModule' },
+
 ];
 
 @NgModule({
