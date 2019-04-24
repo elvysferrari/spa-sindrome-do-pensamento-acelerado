@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { Storage } from '@ionic/storage';
 export class HomePage {
   firstLogin: boolean = false;
 
-  constructor(private storage: Storage){
+  constructor(private storage: Storage, private route: Router){
     storage.get('firstLogin').then((r) => {     
       if(r == null) 
       {
@@ -34,5 +35,9 @@ export class HomePage {
   continuar(){
     this.firstLogin = false;
     this.storage.set('firstLogin', false);
+  }
+
+  navigateTo(url) { 
+    this.route.navigate([url])    
   }
 }

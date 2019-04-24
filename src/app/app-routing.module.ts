@@ -17,6 +17,10 @@ const routes: Routes = [
   { path: 'questoes', loadChildren: './pages/questoes/questoes.module#QuestoesPageModule' },
   { path: 'minhas-questoes', loadChildren: './pages/minhas-questoes/minhas-questoes.module#MinhasQuestoesPageModule' },
   { path: 'view-respostas/:id', loadChildren: './pages/view-respostas/view-respostas.module#ViewRespostasPageModule' },
+  { path: 'sintomas', loadChildren: './pages/sintomas/sintomas.module#SintomasPageModule' },
+  { path: 'autoajuda', loadChildren: './pages/autoajuda/autoajuda.module#AutoajudaPageModule' },
+  { path: 'view-autoajuda/:id', loadChildren: './pages/view-autoajuda/view-autoajuda.module#ViewAutoajudaPageModule' },
+
 
 ];
 

@@ -17,7 +17,7 @@
 .cards{
   background: #fff;
   width: 99.7%;
-  height: 50px;
+  height: 65px;
   margin-inline-start: 2px;
   margin-inline-end: 2px;
   margin-top: 5px;
@@ -43,9 +43,25 @@ ion-content{
   background-size: cover;
 
   .sc-ion-card-ios-s img {        
-    max-width: 100%;
+    //max-width: 100%;
+    width: 70px;
   }  
 } 
 img {
-  height: 50px;
+  height: 65px;
+  max-width: 65px;
+}
+.titulo-divs{
+  height: 15px;
+  padding-left: 10px;
+  font-size: 15px;
+  color: #666;
+  font-weight: 600;
+}
+.descricao-divs{
+  padding-top: 2px;
+  padding-left: 10px;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 0.7rem;
 }

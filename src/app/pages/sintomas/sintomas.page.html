@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Voltar" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <div class="titulo">
+      SPA - Síndrome do Pensamento Acelerado
+    </div>
+    <div class="conteudo" [innerHTML]="conteudo | noSanitize"></div>    
+    <div class="titulo">
+      Síntomas 
+    </div>
+    <div style="padding-top: 10px" class="conteudo" [innerHTML]="sintomas | noSanitize"></div>
+  </div>
+</ion-content>
