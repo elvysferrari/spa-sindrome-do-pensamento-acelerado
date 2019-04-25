@@ -19,7 +19,11 @@ const routes: Routes = [
   { path: 'view-respostas/:id', loadChildren: './pages/view-respostas/view-respostas.module#ViewRespostasPageModule' },
   { path: 'sintomas', loadChildren: './pages/sintomas/sintomas.module#SintomasPageModule' },
   { path: 'autoajuda', loadChildren: './pages/autoajuda/autoajuda.module#AutoajudaPageModule' },
-  { path: 'view-autoajuda/:id', loadChildren: './pages/view-autoajuda/view-autoajuda.module#ViewAutoajudaPageModule' },
+  { path: 'view-autoajuda/:id', loadChildren: './pages/view-autoajuda/view-autoajuda.module#ViewAutoajudaPageModule' },  { path: 'list-mensagem', loadChildren: './pages/list-mensagem/list-mensagem.module#ListMensagemPageModule' },
+  { path: 'admin', loadChildren: './pages/admin/admin.module#AdminPageModule' },
+  { path: 'novo-post', loadChildren: './pages/novo-post/novo-post.module#NovoPostPageModule' },
+  { path: 'nova-mensagem', loadChildren: './pages/nova-mensagem/nova-mensagem.module#NovaMensagemPageModule' },
+
 
 
 ];

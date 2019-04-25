@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="width: auto" text-left>Mensagens</ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <hr no-margin no-padding>
+  <div *ngFor="let mensagem of mensagens">    <!-- Cards -->
+    <ion-card no-padding padding-bottom no-margin class="card">      
+      <ion-item>
+        <!--  <ion-avatar item-left>
+          <img src="http://ionicframework.com/dist/preview-app/www/assets/img/sarah-avatar.png.jpeg">
+        </ion-avatar> --> 
+        <!-- <h2 style="font-weight: bold">Seja o amor da sua vida.</h2> -->
+        <!-- <p>Cyprus</p> -->
+        <h3 style="color: #454873; font-size: 19px">{{ mensagem.titulo }}</h3>
+      </ion-item>
+      <img [src]="mensagem.imagem != '' ? mensagem.imagem : 'assets/images/padrao.jpg'">      
+      <hr>
+      <ion-card-content style="padding-top: 2px">
+        <!-- <p class="like-content">
+          <ion-icon name="heart"></ion-icon> 250 likes
+        </p> -->
+        <p style="font-size: 12px">{{ mensagem.conteudo }}</p>
+        <ion-note style="font-size: 11px; color:black">
+          Publicado em: {{ mensagem.publicadoEm | date:'MM/yyyy HH:mm' }}
+        </ion-note>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+</ion-content>

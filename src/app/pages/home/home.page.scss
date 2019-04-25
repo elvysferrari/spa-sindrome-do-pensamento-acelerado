@@ -41,15 +41,23 @@ ion-content{
   --background: rgb(224, 221, 222);
   background-repeat: no-repeat;
   background-size: cover;
-
   .sc-ion-card-ios-s img {        
-    //max-width: 100%;
+    max-width: auto;
     width: 70px;
-  }  
+  }
+  .sc-ion-card-md-s img{
+    max-width: auto;
+    width: 70px;
+  }
+  
 } 
+  
+
 img {
   height: 65px;
-  max-width: 65px;
+  max-width: 70px !important;
+  
+
 }
 .titulo-divs{
   height: 15px;
