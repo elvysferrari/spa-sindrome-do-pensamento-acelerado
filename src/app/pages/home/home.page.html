@@ -2,7 +2,8 @@
   <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>  
+    </ion-buttons>
+    <ion-title style="width: auto" text-left>Ansiedade Controlada</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -28,7 +29,7 @@
       <ion-button (click)="continuar()" expand="full" color="primary">Continuar</ion-button>
     </ion-card-content>
   </ion-card> -->
-  
+
   <div style="display: flex; flex-direction: column; flex-wrap: wrap">
     <ion-card (click)="navigateTo('/autoajuda')" class="cards">
       <ion-card-content class="cards-content">
@@ -41,19 +42,24 @@
           </div>
         </div>
       </ion-card-content>
-    </ion-card>  
-    <ion-card class="cards">
+    </ion-card>
+    <ion-card (click)="navigateTo('/list-exercicio')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
           <div style="width: 20%">
             <img src="assets/images/exercicio.png">
           </div>
-          <div class="titulo-divs">
-            Exercícios
-          </div>
+          <div style="display: flex; flex-direction: column; flex-wrap: wrap">
+              <div class="titulo-divs">
+                Exercícios
+              </div>
+              <div class="descricao-divs">
+                Exercícios
+              </div>
+            </div>
         </div>
       </ion-card-content>
-    </ion-card>  
+    </ion-card>
     <ion-card (click)="navigateTo('/list-videos')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
@@ -61,16 +67,16 @@
             <img src="assets/images/video.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
-              <div class="titulo-divs">
-                Vídeos
-              </div>
-              <div class="descricao-divs">
-                Vídeos motivacionais, reflexões, meditação, ansiedade, os melhores canais do Youtube reunidos aqui.
-              </div>
-            </div>  
+            <div class="titulo-divs">
+              Vídeos
+            </div>
+            <div class="descricao-divs">
+              Vídeos motivacionais, reflexões, meditação, ansiedade, os melhores canais do Youtube reunidos aqui.
+            </div>
+          </div>
         </div>
       </ion-card-content>
-    </ion-card>  
+    </ion-card>
     <!-- <ion-card class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
@@ -95,34 +101,34 @@
             <img src="assets/images/mensagem.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
-              <div class="titulo-divs">
-                Mensagens
-              </div>
-              <div class="descricao-divs">
-                Mensagens diárias de motivação.
-              </div>
-            </div>  
+            <div class="titulo-divs">
+              Mensagens
+            </div>
+            <div class="descricao-divs">
+              Mensagens diárias de motivação.
+            </div>
+          </div>
         </div>
       </ion-card-content>
-    </ion-card> 
+    </ion-card>
     <ion-card (click)="navigateTo('/sintomas')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
           <div style="width: 20%">
-            <img  src="assets/images/teste.png">
+            <img src="assets/images/teste.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
             <div class="titulo-divs">
               SPA - Explicação e Sintomas
             </div>
             <div class="descricao-divs">
-              A Síndrome do Pensamento Acelerado - o mal do século. Explicação e sintomas 
+              A Síndrome do Pensamento Acelerado - o mal do século. Explicação e sintomas
               esclarecidos pelo Dr. Augusto Cury e outros.
             </div>
-          </div>  
+          </div>
         </div>
       </ion-card-content>
-    </ion-card>   
+    </ion-card>
     <ion-card class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
@@ -136,11 +142,11 @@
             <div class="descricao-divs">
               Encontre um especialista nesse assunto e marque uma consulta online ou presencial.
             </div>
-          </div>          
+          </div>
         </div>
       </ion-card-content>
-    </ion-card>  
-   
+    </ion-card>
+
   </div>
 
 </ion-content>

@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'nova-mensagem', loadChildren: './pages/nova-mensagem/nova-mensagem.module#NovaMensagemPageModule' },
   { path: 'list-videos', loadChildren: './pages/list-videos/list-videos.module#ListVideosPageModule' },
   { path: 'novo-video', loadChildren: './pages/novo-video/novo-video.module#NovoVideoPageModule' },
+  { path: 'list-exercicio', loadChildren: './pages/list-exercicio/list-exercicio.module#ListExercicioPageModule' },
 
 
 
