@@ -1,13 +1,13 @@
-<ion-header>
+<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
   <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
     <ion-title style="width: auto" text-left>Mensagens</ion-title>
   </ion-toolbar>
-</ion-header> 
+</ion-header>  
 
-<ion-content>
+<ion-content #pageContent fullscreen>
   <hr no-margin no-padding>
   <div style="padding-bottom: 5px" *ngFor="let mensagem of mensagens">    <!-- Cards -->
     <ion-card no-padding padding-bottom no-margin class="card">      

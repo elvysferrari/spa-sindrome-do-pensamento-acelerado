@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScrollHideConfig } from 'src/app/directives/scroll-hide.directive';
 
 @Component({
   selector: 'app-sintomas',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class SintomasPage implements OnInit {
   conteudo: string = "";
   sintomas: string = "";
+  footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
+  headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 54 };
   constructor() {
     this.conteudo = `<p style="text-align: justify;">Ansiedade, ang&uacute;stia e inseguran&ccedil;a. Sentimentos que pulsam em larga escala na sociedade.</p>
     <p style="text-align: justify;"><br />Em parte, explicados por vari&aacute;veis sociais, como mais de 12 milh&otilde;es de desempregados do Pa&iacute;s e percal&ccedil;os econ&ocirc;micos e pol&iacute;ticos, aliados &agrave; inseguran&ccedil;a p&uacute;blica que virou rotina e obriga o cidad&atilde;o a um constante estado de alerta.</p>

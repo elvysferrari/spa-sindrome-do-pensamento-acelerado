@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { SintomasPage } from './sintomas.page';
 import { SanitizeOffPipeModule } from 'src/app/pipes/noSanitize.pipe';
+import { ScrollHideDirectiveModule } from 'src/app/directives/scroll-hide.directive';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    ScrollHideDirectiveModule,
     CommonModule,
     FormsModule,
     IonicModule,

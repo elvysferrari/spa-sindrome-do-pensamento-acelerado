@@ -3,6 +3,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { Video } from 'src/app/models/video';
 import { LoadingController } from '@ionic/angular';
 import { VideosService } from 'src/app/services/videos.service';
+import { ScrollHideConfig } from 'src/app/directives/scroll-hide.directive';
 
 @Component({
   selector: 'app-list-videos',
@@ -17,7 +18,9 @@ export class ListVideosPage implements OnInit {
   };
   
   videos: Video[] = [];
-
+  
+  footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
+  headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 54 };
   
   trustedVideoUrl: SafeResourceUrl;
   videosFiltered: any;  

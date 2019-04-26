@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
   <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button text="Voltar" defaultHref="home"></ion-back-button>
@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content #pageContent fullscreen padding>
   <div>
     <div class="titulo">
       SPA - Síndrome do Pensamento Acelerado

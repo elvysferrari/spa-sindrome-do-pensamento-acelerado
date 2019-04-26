@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { AutoajudaPage } from './autoajuda.page';
+import { ScrollHideDirectiveModule } from 'src/app/directives/scroll-hide.directive';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    ScrollHideDirectiveModule,
     CommonModule,
     FormsModule,
     IonicModule,

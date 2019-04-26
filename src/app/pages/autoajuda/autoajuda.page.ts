@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
+import { ScrollHideConfig } from 'src/app/directives/scroll-hide.directive';
 
 @Component({
   selector: 'app-autoajuda',
@@ -12,6 +13,10 @@ import { Router } from '@angular/router';
 })
 export class AutoajudaPage implements OnInit {
   posts: Post[] = [];
+
+  footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
+  headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 54 };
+  
   constructor(public loadingController: LoadingController, 
               private autoajudaService: AutoajudaService,
               private route: Router) {}

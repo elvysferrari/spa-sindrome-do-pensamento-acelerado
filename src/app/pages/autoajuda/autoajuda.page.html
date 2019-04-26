@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
   <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content #pageContent fullscreen>
     <ion-card class="cards" *ngFor="let post of posts">
         <ion-card-content class="cards-content">
           <div style="display: flex; flex-direction: row">

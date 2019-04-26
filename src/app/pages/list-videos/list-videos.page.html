@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
   <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
@@ -6,8 +6,8 @@
     <ion-title style="width: auto" text-left>Vídeos</ion-title>
   </ion-toolbar>
 </ion-header> 
- 
-<ion-content>
+  
+<ion-content #pageContent fullscreen>
   <ion-item>
     <ion-label style="color: #666; font-weight: 600; font-size: 20px">Categoria</ion-label>
     <ion-select (ionChange)="changeCategoria($event)" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Selecione">
