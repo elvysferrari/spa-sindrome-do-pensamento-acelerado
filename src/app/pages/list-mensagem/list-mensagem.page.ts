@@ -17,7 +17,7 @@ export class ListMensagemPage implements OnInit {
   async ngOnInit() {
 
     const loading = await this.loadingController.create({
-      message: 'carregando posts',
+      message: 'carregando mensagens',
       showBackdrop: true
     });
     await loading.present();

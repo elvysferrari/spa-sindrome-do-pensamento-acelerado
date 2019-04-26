@@ -23,6 +23,8 @@ const routes: Routes = [
   { path: 'admin', loadChildren: './pages/admin/admin.module#AdminPageModule' },
   { path: 'novo-post', loadChildren: './pages/novo-post/novo-post.module#NovoPostPageModule' },
   { path: 'nova-mensagem', loadChildren: './pages/nova-mensagem/nova-mensagem.module#NovaMensagemPageModule' },
+  { path: 'list-videos', loadChildren: './pages/list-videos/list-videos.module#ListVideosPageModule' },
+  { path: 'novo-video', loadChildren: './pages/novo-video/novo-video.module#NovoVideoPageModule' },
 
 
 

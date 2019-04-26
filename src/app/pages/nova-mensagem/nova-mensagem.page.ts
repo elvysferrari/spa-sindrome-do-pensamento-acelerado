@@ -293,10 +293,10 @@ export class NovaMensagemPage implements OnInit {
       if (this.mensagemForm.valid) {
         this.mensagemService.createMensagem(formMensagem).then(async (ret) => {
           await loading.dismiss();
-          this.route.navigate(['/admin'])
+          this.route.navigate(['admin'])
         }).catch(async (err) => {
           await loading.dismiss();
-          this.route.navigate(['/admin'])
+          this.route.navigate(['admin'])
   
           const toast = await this.toastController.create({
             message: err,

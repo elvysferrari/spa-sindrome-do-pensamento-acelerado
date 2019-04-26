@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Novo Vídeo</ion-title>
+    </ion-toolbar>
+  </ion-header>  
+
+  <ion-content>
+          
+      <form [formGroup]="videoForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+        <ion-item>
+          <ion-label class="labels" position="stacked">Título</ion-label>
+          <ion-input class="labels" formControlName="titulo" placeholder="Dígite um título"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label class="labels" position="stacked">Link</ion-label>      
+          <ion-textarea class="labels"  formControlName="vid_link" type="text" placeholder="Dígite o link"></ion-textarea>
+        </ion-item>
+    
+        <ion-item class="labels">
+            <ion-label>Categoria</ion-label>
+            <ion-select class="labels" formControlName="categoria" placeholder="Selecione a categoria">
+              <ion-select-option *ngFor="let categoria of categorias" [value]="categoria.nome">{{ categoria.nome }}</ion-select-option>        
+            </ion-select>
+          </ion-item>
+      </form>
+    
+      <!-- <ion-button (click)="uploadFirebase()">Upload</ion-button> -->
+    
+      <!--  <ion-progress-bar [value]="uploadProgress"></ion-progress-bar>
+      <br> --> 
+      <ion-button color="tertiary" (click)="onSubmit()" expand="full" [disabled]="videoForm.invalid">CRIAR</ion-button>
+    </ion-content>

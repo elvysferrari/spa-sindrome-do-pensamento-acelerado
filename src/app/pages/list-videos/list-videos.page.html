@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="width: auto" text-left>Vídeos</ion-title>
+  </ion-toolbar>
+</ion-header> 
+ 
+<ion-content>
+  <ion-item>
+    <ion-label style="color: #666; font-weight: 600; font-size: 20px">Categoria</ion-label>
+    <ion-select (ionChange)="changeCategoria($event)" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Selecione">
+      <ion-select-option  *ngFor="let categoria of categorias" [value]="categoria.nome">{{ categoria.nome }}</ion-select-option>
+      <!-- <ion-select-option selected value="Todas">Todas</ion-select-option>
+      <ion-select-option value="Motivacional">Motivacional</ion-select-option>
+      <ion-select-option value="Auto Ajuda">Auto Ajuda</ion-select-option> -->
+    </ion-select>
+  </ion-item>
+  <hr no-margin no-padding>
+  <div style="padding-bottom: 5px" *ngFor="let i of videosFiltered">    <!-- Cards -->
+    <ion-card no-padding padding-bottom no-margin class="card">      
+      <ion-item>
+        <!--  <ion-avatar item-left>
+          <img src="http://ionicframework.com/dist/preview-app/www/assets/img/sarah-avatar.png.jpeg">
+        </ion-avatar> --> 
+        <!-- <h2 style="font-weight: bold">Seja o amor da sua vida.</h2> -->
+        <!-- <p>Cyprus</p> -->
+        <h3 style="color: #454873; font-size: 18px; margin-top: 5px; margin-bottom: 4px;">{{ i.titulo }}</h3>
+      </ion-item>
+      <iframe width="100%" height="315" [src]="i.trustedVideoUrl" frameborder="0" allowfullscreen></iframe>
+      <hr>
+      
+    </ion-card>
+  </div>
+
+
+  <!-- <iframe *ngFor="let i of array_of_objects" width="100%" height="315" [src]="i.trustedVideoUrl" frameborder="0" allowfullscreen></iframe> -->
+</ion-content>
