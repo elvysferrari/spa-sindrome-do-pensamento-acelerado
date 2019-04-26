@@ -11,7 +11,7 @@ export class HomePage {
   firstLogin: boolean = false;
 
   constructor(private storage: Storage, private route: Router){
-    storage.get('firstLogin').then((r) => {     
+    /* storage.get('firstLogin').then((r) => {     
       if(r == null) 
       {
         this.firstLogin = true;
@@ -23,7 +23,7 @@ export class HomePage {
           this.firstLogin = true;
         }       
       }
-    })
+    }) */
   }
 
   ngOnInit(): void {
