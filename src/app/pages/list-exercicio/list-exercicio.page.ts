@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-exercicio',
@@ -9,7 +10,7 @@ export class ListExercicioPage implements OnInit {
 
   message = "Se prepare!";
 
-  constructor() {
+  constructor(private route: Router) {
     setInterval(() => {
       if(this.message != "Inspire!"){
         this.message = "Inspire!"
@@ -24,4 +25,7 @@ export class ListExercicioPage implements OnInit {
 
   }
 
+  navigateTo(url: string){
+    this.route.navigate([url]);
+  }
 }

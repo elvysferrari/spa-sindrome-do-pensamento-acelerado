@@ -5,7 +5,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
   providedIn: 'root'
 })
 export class VideosService {
-
+ 
   constructor(private firestore: AngularFirestore) { }
 
   getAllVideos() {
@@ -46,6 +46,9 @@ export class VideosService {
     },{
       nome: 'Religiosos',
       sortOrder: 9
+    },{
+      nome: 'Testes',
+      sortOrder: 10
     }].sort((a: any, b: any) => {
       return a.sortOrder < b.sortOrder ? -1 : 1;
     });

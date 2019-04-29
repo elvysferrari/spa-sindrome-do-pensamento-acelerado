@@ -60,8 +60,8 @@ export class NovaMensagemPage implements OnInit {
               public actionSheetController: ActionSheetController,
               private changeRef: ChangeDetectorRef) {
                 this.mensagemForm = this.formBuilder.group({
-                  titulo: ['', [Validators.required, Validators.minLength(2)]],
-                  conteudo: ['', [Validators.required]],                  
+                  titulo: [''],
+                  conteudo: [''],                  
                 });
                }
 

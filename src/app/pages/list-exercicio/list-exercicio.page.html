@@ -3,20 +3,35 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title style="width: auto" text-left>Exercícios</ion-title>
+    <ion-title style="width: auto" text-left>Lista de Exercícios</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="div-text">{{ message }}</div> 
-  <div class="radius">
-    <span class="place"></span>
-    <span class="border-animation ba1"></span>
-    <span class="border-animation ba2"></span>
-    <span class="border-animation ba3"></span>
-  </div>
-  <!-- <img [height]="imgHeight" [width]="imgWidth" [src]="'assets/images/circle.png'"> 
+  <ion-card class="cards">
+    <ion-card-content class="cards-content">
+      <div style="display: flex; flex-direction: row">
+        <div>
+          <ion-thumbnail (click)="navigateTo('/exercicio-respiracao')" style="width: 75px; height: 75px;" slot="start">
+            <ion-img [src]="'assets/images/meditacao.png'">
+            </ion-img>
+          </ion-thumbnail>
+        </div>
+        <div style="width: 100%">
+          <div style="display: flex; flex-direction: column; width: 100%; padding-left: 7px">                
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap">
+              <div (click)="navigateTo('/exercicio-respiracao')" style="width: 100%" class="label-item-title">
+                Exercício de Respiração
+              </div>
+              <div class="descricao-divs">
+                Este exercício de respiração vai te ajudar a controlar a ansiedade e a insônia
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>
 
-  <ion-button shape="round" (click)="parar()" expand="full" color="primary">Parar</ion-button> -->
 
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { ScrollHideConfig } from 'src/app/directives/scroll-hide.directive';
 
 @Component({
   selector: 'app-view-autoajuda',
@@ -12,7 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 export class ViewAutoajudaPage implements OnInit {
   post: Post;
   postId: string;
-
+  
+  footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
+  headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 54 };
+  
   constructor(private route: ActivatedRoute,
               public loadingController: LoadingController,
               public autoAjudaService: AutoajudaService) {

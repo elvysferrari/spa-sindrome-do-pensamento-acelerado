@@ -26,13 +26,13 @@ export class ListMensagemPage implements OnInit {
     await loading.present();
 
     this.mensagemService.getAllMensagens().subscribe(async (data) => {
-      this.mensagens = data.map(e => {
-
+      this.mensagens = data.map(e => {        
         return {
           id: e.payload.doc.id,
           ...e.payload.doc.data()
         } as Mensagem;
       });
+      
 
       await loading.dismiss();
     }, async (error) => await loading.dismiss()) 
