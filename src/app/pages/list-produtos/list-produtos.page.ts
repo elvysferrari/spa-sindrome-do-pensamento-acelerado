@@ -20,7 +20,7 @@ export class ListProdutosPage implements OnInit {
               private produtosService: ProdutosService) { }
 
   async ngOnInit() {
-    let prod = new Produto();
+    /* let prod = new Produto();
     prod.ativo = true;
     prod.categoria = "Saúde, Bem-estar e Beleza";
     prod.conteudo = `Nesse programa você poderá aprender a meditação de forma simples e fácil, praticando apenas 15 minutos por dia e tendo todos os benefícios no corpo e mente que essa técnica transformadora proporciona, eliminando seus estresse e melhorando a sua produtividade.
@@ -31,6 +31,8 @@ export class ListProdutosPage implements OnInit {
     prod.nome = "A arte da Meditação - Ebook";
     prod.nomeProdutor = "Digital Push";
        
+    this.produtosService.createProduto(prod);
+
     let prod2 = new Produto();
     prod2.ativo = true;
     prod2.categoria = "Saúde, Bem-estar e Beleza";
@@ -46,6 +48,8 @@ export class ListProdutosPage implements OnInit {
     prod2.nome = "Acabe com a Ansiedade - Ebook";
     prod2.nomeProdutor = "Academia Arte Movimento";
 
+    this.produtosService.createProduto(prod2);
+
     let prod3 = new Produto();
     prod3.ativo = true;
     prod3.categoria = "Saúde, Bem-estar e Beleza";
@@ -56,6 +60,8 @@ export class ListProdutosPage implements OnInit {
     prod3.linkVenda = "http://mon.net.br/buhky";
     prod3.nome = "Medita-se";
     prod3.nomeProdutor = "Aleixo";
+
+    this.produtosService.createProduto(prod3);
 
     let prod4 = new Produto();
     prod4.ativo = true;
@@ -68,6 +74,8 @@ export class ListProdutosPage implements OnInit {
     prod4.nome = "Akalmesse";
     prod4.nomeProdutor = "Valnutri";
 
+    this.produtosService.createProduto(prod4);
+
     let prod5 = new Produto();
     prod5.ativo = true;
     prod5.categoria = "Saúde, Bem-estar e Beleza";
@@ -77,6 +85,8 @@ export class ListProdutosPage implements OnInit {
     prod5.linkVenda = "http://mon.net.br/bui78";
     prod5.nome = "Relax Health - Health Care USA";
     prod5.nomeProdutor = "Health Care USA";
+
+    this.produtosService.createProduto(prod5);
 
     let prod6 = new Produto();
     prod6.ativo = true;
@@ -88,13 +98,7 @@ export class ListProdutosPage implements OnInit {
     prod6.nome = "Sleep Calm";
     prod6.nomeProdutor = "LA Nature";
 
-
-    this.produtos.push(prod);
-    this.produtos.push(prod2);
-    this.produtos.push(prod3);
-    this.produtos.push(prod4);
-    this.produtos.push(prod5);
-    this.produtos.push(prod6);
+    this.produtosService.createProduto(prod6); */
 
     const loading = await this.loadingController.create({
       message: 'carregando produtos',
@@ -103,12 +107,12 @@ export class ListProdutosPage implements OnInit {
     await loading.present();
 
     this.produtosService.getAllProdutos().subscribe(async (data) => {
-      /* this.produtos = data.map(e => {        
+      this.produtos = data.map(e => {        
         return {
           id: e.payload.doc.id,
           ...e.payload.doc.data()
         } as Produto;
-      }); */
+      });
       
 
       await loading.dismiss();
