@@ -1,0 +1,35 @@
+<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="pageContent">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="width: auto" text-left>Ebooks e Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #pageContent fullscreen>
+  <div style="padding-bottom: 5px" *ngFor="let produto of produtos">
+    <!-- Cards -->
+    <ion-card no-padding padding-bottom no-margin class="card">
+      <ion-item>
+        <h3 style="color: #454873; font-size: 19px; width: 100%">{{ produto.nome }}</h3>
+        <!-- <p style="color: #1a1a1f; font-size: 12px; width: 17%">Ver</p> -->
+        <!-- <img style="height:30px; width:40px;" [src]="'assets/images/download.png'"> -->
+      </ion-item>
+      <img height="380px" [src]="produto.imagem != '' ? produto.imagem : 'assets/images/padrao.jpg'">
+      <hr>
+      <ion-card-content style="padding-top: 2px">
+        <p style="font-size: 12px">{{ produto.conteudo }}</p>        
+        <div style="display: flex; flex-direction: column">
+          <ion-note style="font-size: 11px; color:black">
+            Categoria: {{ produto.categoria }}
+          </ion-note>
+          <ion-note style="font-size: 11px; color:black">
+            Produtor: {{ produto.nomeProdutor }}
+          </ion-note>
+        </div>
+        <img (click)="openLink(produto.linkVenda)" style="height:50px; width:100%; padding-left: 16%; padding-right: 16%; padding-top: 10px" [src]="produto.formato != 'Ebook' ? 'assets/images/comprar.png' : 'assets/images/download.png'">
+      </ion-card-content> 
+    </ion-card> 
+  </div> 
+</ion-content>

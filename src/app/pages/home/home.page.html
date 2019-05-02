@@ -34,7 +34,7 @@
     <ion-card (click)="navigateTo('/autoajuda')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
-          <div style="width: 20%">
+          <div>
             <img src="assets/images/post.jpg">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
@@ -51,7 +51,7 @@
     <ion-card (click)="navigateTo('/list-exercicio')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
-          <div style="width: 20%">
+          <div>
             <img src="assets/images/exercicio.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
@@ -68,7 +68,7 @@
     <ion-card (click)="navigateTo('/list-videos')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
-          <div style="width: 20%">
+          <div>
             <img src="assets/images/video.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
@@ -81,28 +81,11 @@
           </div>
         </div>
       </ion-card-content>
-    </ion-card>
-    <!-- <ion-card class="cards">
-      <ion-card-content class="cards-content">
-        <div class="card-div">
-          <div style="width: 20%">
-            <img src="assets/images/motivacao.jpg">
-          </div>
-          <div style="display: flex; flex-direction: column; flex-wrap: wrap">
-            <div class="titulo-divs">
-              Motivação
-            </div>
-            <div class="descricao-divs">
-              
-            </div>
-          </div> 
-        </div>
-      </ion-card-content>
-    </ion-card>   -->
+    </ion-card>    
     <ion-card (click)="navigateTo('/list-mensagem')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
-          <div style="width: 20%">
+          <div>
             <img src="assets/images/mensagem.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
@@ -119,7 +102,7 @@
     <ion-card (click)="navigateTo('/sintomas')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
-          <div style="width: 20%">
+          <div>
             <img src="assets/images/teste.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
@@ -134,10 +117,27 @@
         </div>
       </ion-card-content>
     </ion-card>
+    <ion-card class="cards" (click)="navigateTo('/list-produtos')">
+      <ion-card-content class="cards-content">
+        <div class="card-div">
+          <div>
+            <img src="assets/images/book.png">
+          </div>
+          <div style="display: flex; flex-direction: column; flex-wrap: wrap">
+            <div class="titulo-divs">
+              Ebooks e Produtos
+            </div>
+            <div class="descricao-divs">
+                Aqui você encontra uma variedade de Ebooks e Produtos que podem te ajudar a meditar, relaxar e combater a ansiedade.
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
     <ion-card class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
-          <div style="width: 20%">
+          <div>
             <img src="assets/images/consulta.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
@@ -151,6 +151,8 @@
         </div>
       </ion-card-content>
     </ion-card>
+
+    
 
   </div>
 

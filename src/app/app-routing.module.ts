@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'novo-video', loadChildren: './pages/novo-video/novo-video.module#NovoVideoPageModule' },
   { path: 'list-exercicio', loadChildren: './pages/list-exercicio/list-exercicio.module#ListExercicioPageModule' },
   { path: 'exercicio-respiracao', loadChildren: './pages/exercicio-respiracao/exercicio-respiracao.module#ExercicioRespiracaoPageModule' },
+  { path: 'list-produtos', loadChildren: './pages/list-produtos/list-produtos.module#ListProdutosPageModule' },
 
 
 
