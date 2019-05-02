@@ -1,0 +1,11 @@
+<ion-content>
+    <ion-label style="line-height: 2rem; color: #666; font-weight: 600">Aonde você está?</ion-label>    
+  <ion-list style="display: flex; flex-wrap: wrap; flex-direction: row">
+    <ion-item style="font-size: 0.8rem; width: 45%; flex: 1 1 auto;" *ngFor="let lugar of lugares">
+      <ion-thumbnail class="div-list" slot="start">
+        <img style=" border-radius: 15px 15px 15px 15px;" [src]="lugar.icon">
+      </ion-thumbnail>
+      <ion-label>{{ lugar.nome }}</ion-label>
+    </ion-item>    
+  </ion-list>
+</ion-content> 

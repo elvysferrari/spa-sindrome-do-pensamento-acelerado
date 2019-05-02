@@ -28,6 +28,8 @@ const routes: Routes = [
   { path: 'list-exercicio', loadChildren: './pages/list-exercicio/list-exercicio.module#ListExercicioPageModule' },
   { path: 'exercicio-respiracao', loadChildren: './pages/exercicio-respiracao/exercicio-respiracao.module#ExercicioRespiracaoPageModule' },
   { path: 'list-produtos', loadChildren: './pages/list-produtos/list-produtos.module#ListProdutosPageModule' },
+  { path: 'timeline-humor', loadChildren: './pages/timeline-humor/timeline-humor.module#TimelineHumorPageModule' },
+  { path: 'novo-humor', loadChildren: './pages/novo-humor/novo-humor.module#NovoHumorPageModule' },
 
 
 

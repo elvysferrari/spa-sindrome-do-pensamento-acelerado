@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="width: auto" text-left>Como está seu humor?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="display: flex; flex-direction: column; font-size: 0.8rem">
+    <div style="height: 70px">
+      <ion-textarea style="height: 70px" type="text" placeholder="No que você está pensando?"></ion-textarea>
+    </div>
+    <div style="height: 165px;">    
+      <app-list-sentimentos></app-list-sentimentos>
+    </div>
+    <hr style="background-color: #5a5d5b; border: 1px solid #666; width: 100%;">
+    <div style="height: 165px;">      
+      <app-list-lugares></app-list-lugares>
+    </div>
+
+    <!-- <div style="height: 100px; padding-top: 20px">
+      <ion-label>Aonde você está?</ion-label>   
+      <app-list-lugares></app-list-lugares> 
+    </div> -->
+
+
+  </div>
+ <ion-fab style="padding-bottom: 55px;" vertical="bottom" horizontal="center" edge slot="fixed">
+    <ion-fab-button color="success" style="width: 48px; height: 48px;">
+      <ion-icon style="font-size: 2.5rem" name="checkmark"></ion-icon>
+    </ion-fab-button> 
+  </ion-fab>
+
+</ion-content>
