@@ -8,27 +8,27 @@
 </ion-header>
 
 <ion-content padding>
-  <div style="display: flex; flex-direction: column; font-size: 0.8rem">
-    <div style="height: 70px">
-      <ion-textarea style="height: 70px" type="text" placeholder="No que você está pensando?"></ion-textarea>
+  <div style="display: flex; flex-direction: column; font-size: 0.8rem; height: 100%;">
+    <div style="height: 15%">
+      <ion-textarea [(ngModel)]="pensamento" style="height: 70px" type="text" placeholder="No que você está pensando?"></ion-textarea>
     </div>
-    <div style="height: 165px;">    
-      <app-list-sentimentos></app-list-sentimentos>
+    <div style="height: 35%">    
+      <app-list-sentimentos (onClick)="onClickSentimento($event)"></app-list-sentimentos>
     </div>
     <hr style="background-color: #5a5d5b; border: 1px solid #666; width: 100%;">
-    <div style="height: 165px;">      
-      <app-list-lugares></app-list-lugares>
+    <div style="height: 35%">      
+      <app-list-lugares (onClick)="onClickLugar($event)"></app-list-lugares>
     </div>
 
     <!-- <div style="height: 100px; padding-top: 20px">
       <ion-label>Aonde você está?</ion-label>   
-      <app-list-lugares></app-list-lugares> 
+      <app-list-lugares></app-list-lugares>  
     </div> -->
 
 
   </div>
  <ion-fab style="padding-bottom: 55px;" vertical="bottom" horizontal="center" edge slot="fixed">
-    <ion-fab-button color="success" style="width: 48px; height: 48px;">
+    <ion-fab-button (click)="submitHumor()" color="success" style="width: 48px; height: 48px;">
       <ion-icon style="font-size: 2.5rem" name="checkmark"></ion-icon>
     </ion-fab-button> 
   </ion-fab>

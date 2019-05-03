@@ -2,7 +2,7 @@
 <ion-content>
   <ion-label style="line-height: 2rem; color: #666; font-weight: 600">Como você está se sentindo?</ion-label>    
   <ion-list style="display: flex; flex-wrap: wrap; flex-direction: row">
-    <ion-item style="font-size: 0.8rem; width: 45%; flex: 1 1 auto;" *ngFor="let sentimento of sentimentos">
+    <ion-item (click)="checkItem(sentimento)" [color]="sentimento.checked ? 'primary' : 'light'" style="font-size: 0.8rem; width: 45%; flex: 1 1 auto;" *ngFor="let sentimento of sentimentos">
       <ion-thumbnail class="div-list" slot="start">
         <img style=" border-radius: 15px 15px 15px 15px;" [src]="sentimento.icon">
       </ion-thumbnail>

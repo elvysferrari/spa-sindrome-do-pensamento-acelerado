@@ -118,12 +118,17 @@ export class UserService {
       {
         title: 'Ajudar',
         url: '/questoes',
-        icon: 'happy'
+        icon: 'hand'
       },
       {
         title: 'Minhas Perguntas',
         url: '/minhas-questoes',
         icon: 'help-circle-outline'
+      },
+      {
+        title: 'Meu Humor',
+        url: '/timeline-humor',
+        icon: 'happy'
       },
       {
         title: 'Minha Conta',

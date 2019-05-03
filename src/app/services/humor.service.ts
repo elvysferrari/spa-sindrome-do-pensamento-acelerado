@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Humor } from '../models/humor';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HumorService {
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
+
+  createHumor(humor: Humor){
+    const humorJson = JSON.parse(JSON.stringify(humor));
+    return this.firestore.collection('humores').add(humorJson);
+  }
+
 
   getLugares() {
     return [{

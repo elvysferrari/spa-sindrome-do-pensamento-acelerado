@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +11,11 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   firstLogin: boolean = false;
-
-  constructor(private storage: Storage, private route: Router){
+  user: User;
+  
+  constructor(private storage: Storage, 
+              private route: Router,
+              private userService: UserService){
     /* storage.get('firstLogin').then((r) => {     
       if(r == null) 
       {
@@ -26,10 +31,10 @@ export class HomePage {
     }) */
   }
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    
+  ngOnInit(): void {   
+    this.userService.getLogged().subscribe((user: User) => {
+      this.user = user;
+    })
   }
 
   continuar(){
@@ -38,6 +43,14 @@ export class HomePage {
   }
 
   navigateTo(url) { 
-    this.route.navigate([url])    
+    if(url == "/novo-humor"){
+      if(this.user){
+        this.route.navigate([url]) 
+      }else{
+        this.route.navigate(['/login'])
+      }
+    }else{
+      this.route.navigate([url])    
+    }
   }
 }
