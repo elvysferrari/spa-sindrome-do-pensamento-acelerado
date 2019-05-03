@@ -40,34 +40,43 @@ export class NovoHumorPage implements OnInit {
   }
 
   async submitHumor(){
-    const loading = await this.loadingController.create({
-      message: 'salvando',
-      showBackdrop: true
-    });
-    await loading.present();
-
-    let timestamp = firebase.firestore.Timestamp.now().toDate(); 
-
-    let humor = new Humor();
-    humor.lugar = this.lugar;
-    humor.sentimento = this.sentimento;
-    humor.pensamento = this.pensamento;
-    humor.publicadoEm = timestamp;
-    humor.userId = this.user.id;
-
-    this.humorService.createHumor(humor).then(async () => {
-      await loading.dismiss();
-      this.route.navigate(['home'])
-    }).catch(async (err) => {
-      await loading.dismiss();
-      this.route.navigate(['home'])
-
+    if(this.sentimento || this.pensamento || this.lugar){
+      const loading = await this.loadingController.create({
+        message: 'salvando',
+        showBackdrop: true
+      });
+      await loading.present();
+  
+      let timestamp = firebase.firestore.Timestamp.now().toDate(); 
+  
+      let humor = new Humor();
+      humor.lugar = this.lugar;
+      humor.sentimento = this.sentimento;
+      humor.pensamento = this.pensamento;
+      humor.publicadoEm = timestamp;
+      humor.userId = this.user.id;
+  
+      this.humorService.createHumor(humor).then(async () => {
+        await loading.dismiss();
+        this.route.navigate(['/timeline-humor'])         
+      }).catch(async (err) => {
+        await loading.dismiss();
+        this.route.navigate(['/timeline-humor'])
+  
+        const toast = await this.toastController.create({
+          message: err,
+          position: 'top',
+          duration: 2000
+        });
+        toast.present();
+      });
+    }else{
       const toast = await this.toastController.create({
-        message: err,
+        message: "Preencha alguma informação para salvar",
         position: 'top',
         duration: 2000
       });
       toast.present();
-    });
+    }    
   }
 }

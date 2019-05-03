@@ -77,37 +77,47 @@ export class QuestoesPage implements OnInit {
   }
 
   async sendResposta(questao: Questao) {
-    const loading = await this.loadingController.create({
-      message: 'enviando',
-      showBackdrop: true
-    });
-    await loading.present();
+    if (this.resposta.trim() != "") {
 
-    let timestamp = firebase.firestore.Timestamp.now().toDate();
-    let questaoResposta: QuestaoResposta = new QuestaoResposta();
-    questaoResposta.questaoId = questao.id;
-    questaoResposta.resposta = this.resposta;
-    questaoResposta.userId = this.user.id;
-    questaoResposta.userName = this.user.name;
-    questaoResposta.respondidaEm = timestamp;
 
-    this.questaoService.createResposta(questaoResposta).then(async (r) => {
-      await loading.dismiss();
-      this.resposta = "";
-      this.slide.lockSwipes(false)
-      this.slide.slideNext();
-      this.slide.lockSwipes(true);
-    }).catch(async (error) => {
-      await loading.dismiss();
-      const toast = await this.toastController.create({
-        message: error,
-        position: 'top',
-        duration: 2000
+
+      const loading = await this.loadingController.create({
+        message: 'enviando',
+        showBackdrop: true
       });
-      toast.present();
-    })
+      await loading.present();
 
+      let timestamp = firebase.firestore.Timestamp.now().toDate();
+      let questaoResposta: QuestaoResposta = new QuestaoResposta();
+      questaoResposta.questaoId = questao.id;
+      questaoResposta.resposta = this.resposta;
+      questaoResposta.userId = this.user.id;
+      questaoResposta.userName = this.user.name;
+      questaoResposta.respondidaEm = timestamp;
 
+      this.questaoService.createResposta(questaoResposta).then(async (r) => {
+        await loading.dismiss();
+        this.resposta = "";
+        this.slide.lockSwipes(false)
+        this.slide.slideNext();
+        this.slide.lockSwipes(true);
+      }).catch(async (error) => {
+        await loading.dismiss();
+        const toast = await this.toastController.create({
+          message: error,
+          position: 'top',
+          duration: 2000
+        });
+        toast.present();
+      })
+    }else{      
+        const toast = await this.toastController.create({
+          message: "Mensagem vazia!",
+          position: 'top',
+          duration: 2000
+        });
+        toast.present();
+    }
   }
 
   sliderEnd(evt) {

@@ -126,7 +126,7 @@ export class UserService {
         icon: 'help-circle-outline'
       },
       {
-        title: 'Meu Humor',
+        title: 'Timeline',
         url: '/timeline-humor',
         icon: 'md-happy'
       },
@@ -155,7 +155,7 @@ export class UserService {
         icon: 'help-circle-outline'
       },
       {
-        title: 'Meu Humor',
+        title: 'Timeline',
         url: '/timeline-humor',
         icon: 'md-happy'
       },

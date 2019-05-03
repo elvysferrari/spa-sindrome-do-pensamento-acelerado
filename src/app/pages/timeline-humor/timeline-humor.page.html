@@ -15,7 +15,7 @@
           {{ humor.publicadoEm | date : 'dd/MM/yyyy HH:mm'}}
         </div>
         <div style="display: flex; flex-direction: row; height: 25px; padding-top: 10px">
-          <div style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 20%">
+          <div style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 25%">
             <div>
               <ion-thumbnail class="div-list" slot="start">
                 <img style=" border-radius: 15px 15px 15px 15px;" [src]="humor?.sentimento?.icon">
@@ -25,8 +25,8 @@
                 </span>
             </div>          
           </div>
-          <div style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 20%">
-            <div>
+          <div style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 25%">
+            <div *ngIf="humor?.lugar">
               <ion-thumbnail class="div-list" slot="start">
                 <img style=" border-radius: 15px 15px 15px 15px;" [src]="humor?.lugar?.icon">
               </ion-thumbnail>
@@ -35,7 +35,7 @@
                 </span>
             </div>            
           </div> 
-          <div (click)="deleteHumor(humor)" style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 60%;justify-content: flex-end; padding-top: 5px">
+          <div (click)="deleteHumor(humor)" style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 49%;justify-content: flex-end; padding-top: 5px">
               <div>
                 <ion-thumbnail style="width: 20px; height: 20px;" slot="start">
                   <img style="border-radius: 15px 15px 15px 15px;" [src]="'assets/icon/delete.png'">
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div style="color:#666; font-weight: 300; padding-top: 20px">
-          <span style="font-size: 12px; color:#b77878; font-weight: 600">Pensamento</span>
+          <span style="font-size: 12px; color:#b77878; font-weight: 600">{{ humor.pensamento ? '' : 'Sem descrição' }}</span>
           <p style="font-size: 12px;">{{ humor.pensamento  }}</p>
         </div>
       </ion-card-content>
