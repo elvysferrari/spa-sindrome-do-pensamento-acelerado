@@ -14,7 +14,18 @@ export class HumorService {
     return this.firestore.collection('humores').add(humorJson);
   }
 
+  getHumoresByUserId(userId: string){
+    return this.firestore.collection('humores', ref => ref.where('userId', '==', userId)).snapshotChanges();
+  }
 
+  deleteHumor(id: string){
+    return new Promise((resolve, reject) => {
+      this.firestore.doc('humores/' + id).delete().then(() => {
+        resolve()
+      });
+    })
+  }
+  
   getLugares() {
     return [{
       nome: 'no trabalho',

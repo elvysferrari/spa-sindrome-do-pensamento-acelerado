@@ -14,7 +14,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 export class NovoHumorPage implements OnInit {
   lugar: any;
   sentimento: any;
-  pensamento: string;
+  pensamento: string = "";
 
   user: User;
   

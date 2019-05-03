@@ -66,7 +66,7 @@ export class AppComponent {
   }
   
   navigateTo(url) {
-    if (url == "/questoes" || url == "/minhas-questoes") {
+    if (url == "/questoes" || url == "/minhas-questoes" || "/timeline-humor") {
       if (this.user) {
         this.route.navigate([url])
       } else {

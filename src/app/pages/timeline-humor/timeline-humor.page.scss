@@ -1,0 +1,60 @@
+.cards{
+    background: #fff;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    box-shadow: 0 2px 2px rgba(0,0,0,.12)
+}
+.cards-content{
+    padding-inline-start: 5px;
+    padding-inline-end: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 10px;
+}
+.card-date{
+    font-size: 10px;
+    font-weight: 600;
+    color: rgb(22, 42, 214);
+    padding-top: 20px;
+}
+
+.card-comment{
+    margin-inline-start:0px;
+    margin-inline-end:0px;
+    margin-top:0px;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(0,0,0,.12)
+}
+.card-content-comment{
+    padding-inline-start: 5px;
+    padding-inline-end: 5px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+.div-list{
+    width: 30px;
+    height: 30px;
+    margin-inline-end: 1px;
+    border-radius: 10px 10px 10px 10px;  
+}
+ion-content{
+    /* --background: url('/assets/images/background.png'); */
+    --background: rgb(224, 221, 222);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

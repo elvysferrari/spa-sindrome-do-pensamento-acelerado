@@ -1,9 +1,53 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>timelineHumor</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="width: auto" text-left>Timeline</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <div class="comment-box">
+    <ion-card class="cards" *ngFor="let humor of humores">
+      <ion-card-content class="cards-content">
+        <div style="color: #7d8de2; font-weight: 600">
+          {{ humor.publicadoEm | date : 'dd/MM/yyyy HH:mm'}}
+        </div>
+        <div style="display: flex; flex-direction: row; height: 25px; padding-top: 10px">
+          <div style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 20%">
+            <div>
+              <ion-thumbnail class="div-list" slot="start">
+                <img style=" border-radius: 15px 15px 15px 15px;" [src]="humor?.sentimento?.icon">
+              </ion-thumbnail>
+              <span style="padding-left: 5px; white-space: nowrap;">
+                  {{ humor?.sentimento?.nome }}
+                </span>
+            </div>          
+          </div>
+          <div style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 20%">
+            <div>
+              <ion-thumbnail class="div-list" slot="start">
+                <img style=" border-radius: 15px 15px 15px 15px;" [src]="humor?.lugar?.icon">
+              </ion-thumbnail>
+              <span style="padding-left: 5px; white-space: nowrap;">
+                  {{ humor?.lugar?.nome }}
+                </span>
+            </div>            
+          </div> 
+          <div (click)="deleteHumor(humor)" style="display: flex; flex-direction: row; align-items: baseline; margin-top: -10px; width: 60%;justify-content: flex-end; padding-top: 5px">
+              <div>
+                <ion-thumbnail style="width: 20px; height: 20px;" slot="start">
+                  <img style="border-radius: 15px 15px 15px 15px;" [src]="'assets/icon/delete.png'">
+                </ion-thumbnail>              
+              </div>            
+            </div>
+        </div>
+        <div style="color:#666; font-weight: 300; padding-top: 20px">
+          <span style="font-size: 12px; color:#b77878; font-weight: 600">Pensamento</span>
+          <p style="font-size: 12px;">{{ humor.pensamento  }}</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

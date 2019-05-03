@@ -128,7 +128,7 @@ export class UserService {
       {
         title: 'Meu Humor',
         url: '/timeline-humor',
-        icon: 'happy'
+        icon: 'md-happy'
       },
       {
         title: 'Minha Conta',
@@ -147,12 +147,17 @@ export class UserService {
       {
         title: 'Ajudar',
         url: '/questoes',
-        icon: 'happy'
+        icon: 'md-happy'
       },
       {
         title: 'Minhas Perguntas',
         url: '/minhas-questoes',
         icon: 'help-circle-outline'
+      },
+      {
+        title: 'Meu Humor',
+        url: '/timeline-humor',
+        icon: 'md-happy'
       },
       {
         title: 'Entrar',
