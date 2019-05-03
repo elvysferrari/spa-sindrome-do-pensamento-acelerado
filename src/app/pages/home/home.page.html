@@ -55,13 +55,13 @@
             <img src="assets/images/exercicio.png">
           </div>
           <div style="display: flex; flex-direction: column; flex-wrap: wrap">
-              <div class="titulo-divs">
-                Exercícios
-              </div>
-              <div class="descricao-divs">
-                Técnicas e exercícios para mandar a ansiedade para bem longe.
-              </div>
+            <div class="titulo-divs">
+              Exercícios
             </div>
+            <div class="descricao-divs">
+              Técnicas e exercícios para mandar a ansiedade para bem longe.
+            </div>
+          </div>
         </div>
       </ion-card-content>
     </ion-card>
@@ -81,7 +81,7 @@
           </div>
         </div>
       </ion-card-content>
-    </ion-card>    
+    </ion-card>
     <ion-card (click)="navigateTo('/list-mensagem')" class="cards">
       <ion-card-content class="cards-content">
         <div class="card-div">
@@ -128,7 +128,8 @@
               Produtos
             </div>
             <div class="descricao-divs">
-              Aqui você encontra uma variedade de Ebooks e Produtos que podem te ajudar a meditar, relaxar e combater a ansiedade.
+              Aqui você encontra uma variedade de Ebooks e Produtos que podem te ajudar a meditar, relaxar e combater a
+              ansiedade.
             </div>
           </div>
         </div>
@@ -152,17 +153,30 @@
       </ion-card-content>
     </ion-card>
 
-    
+
 
   </div>
 
 </ion-content>
 <ion-footer>
 
-  <ion-fab style="padding-bottom: 35px;" vertical="bottom" horizontal="end" edge slot="fixed">
+  <!-- <ion-fab style="padding-bottom: 35px;" vertical="bottom" horizontal="end" edge slot="fixed">
     <ion-fab-button (click)="navigateTo('/novo-humor')" style="width: 48px; height: 48px;">
       <ion-icon name="md-happy"></ion-icon>
     </ion-fab-button> 
-  </ion-fab>
+  </ion-fab> -->
 
+  <ion-fab style="padding-bottom: 35px;" vertical="bottom" horizontal="end" edge slot="fixed">
+    <ion-fab-button>
+      <ion-icon style="font-size: 32px;" name="md-happy"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button style="width: 48px; height: 48px;" (click)="navigateTo('/novo-humor')" >
+        <ion-icon style="font-size: 28px;color: #5ca95c;" name="md-add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button style="width: 48px; height: 48px;" (click)="navigateTo('/timeline-humor')" >          
+        <ion-icon style="font-size: 28px;color: #ab3f52;" name="md-analytics"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-footer>
