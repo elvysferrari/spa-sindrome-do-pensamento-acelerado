@@ -43,10 +43,9 @@ export class HomePage {
   }
 
   navigateTo(url) { 
-    if(url == "/novo-humor"){
+    if(url == "/novo-humor" || url == "/timeline-humor"){
       if(this.user){
-        //this.route.navigate([url]) 
-        this.route.navigateByUrl('novo-humor', {skipLocationChange: true}) 
+        this.route.navigate([url])         
       }else{
         this.route.navigate(['/login'])
       }
