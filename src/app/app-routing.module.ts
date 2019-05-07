@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'list-produtos', loadChildren: './pages/list-produtos/list-produtos.module#ListProdutosPageModule' },
   { path: 'timeline-humor', loadChildren: './pages/timeline-humor/timeline-humor.module#TimelineHumorPageModule' },
   { path: 'novo-humor', loadChildren: './pages/novo-humor/novo-humor.module#NovoHumorPageModule' },
+  { path: 'admin-questoes', loadChildren: './pages/admin-questoes/admin-questoes.module#AdminQuestoesPageModule' },
 
 
 

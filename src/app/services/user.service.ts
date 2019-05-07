@@ -112,7 +112,7 @@ export class UserService {
     return [
       {
         title: 'Início',
-        url: '/home',
+        url: 'home',
         icon: 'home'
       },
       {
@@ -141,7 +141,7 @@ export class UserService {
     return [
       {
         title: 'Início',
-        url: '/home',
+        url: 'home',
         icon: 'home'
       },
       {

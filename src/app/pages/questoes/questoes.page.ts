@@ -53,18 +53,44 @@ export class QuestoesPage implements OnInit {
         
         await loading.dismiss();  
       }) */
+
+    let questoesResponse: Questao[] = [];
+
     this.questaoService.getAllQuestoes().subscribe(async (data) => {
-      this.questoes = data.map(e => {
+      questoesResponse = data.map(e => {
 
         return {
           id: e.payload.doc.id,
           ...e.payload.doc.data()
         } as Questao;
-      }).sort((a: any, b: any) => {
+      }).filter(x => x.userId != this.user.id).sort((a: any, b: any) => {
         return a.publicadaEm > b.publicadaEm ? -1 : 1;
       });
 
-      await loading.dismiss();
+      this.questaoService.getRespostasByUserId(this.user.id).subscribe(async (response) => {
+        
+        let respostas = response.map(e => {
+
+          return {
+            id: e.payload.doc.id,
+            ...e.payload.doc.data()
+          } as QuestaoResposta;
+        })
+        
+        questoesResponse.forEach((questao: Questao) => {          
+          let exist = respostas.find(x => x.questaoId == questao.id);
+          if(!exist){
+            this.questoes.push(questao);
+          }
+        })
+
+
+        await loading.dismiss();
+      })
+
+      
+
+      
     })
 
     this.slide.lockSwipes(true);

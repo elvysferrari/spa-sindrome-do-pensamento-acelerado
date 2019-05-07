@@ -18,6 +18,10 @@ export class QuestoesService {
     }
 
     getAllQuestoes() {
+      return this.firestore.collection('questoes', ref => ref.where('status', '==', "Aprovada")).snapshotChanges();
+    }
+
+    getAllAdminQuestoes() {
       return this.firestore.collection('questoes').snapshotChanges();
     }
 
@@ -40,10 +44,27 @@ export class QuestoesService {
       return this.firestore.collection('questaorespostas', ref => ref.where('questaoId', '==', questaoId)).snapshotChanges();
     }
 
+    getRespostasByUserId(userId: string){
+      return this.firestore.collection('questaorespostas', ref => ref.where('userId', '==', userId)).snapshotChanges();
+    }
+
     createResposta(questaoResposta: QuestaoResposta) {    
       const questaorespostaJson = JSON.parse(JSON.stringify(questaoResposta));
       return this.firestore.collection('questaorespostas').add(questaorespostaJson);
     }
     
-    
+    updateQuestao(questao: Questao){
+      //delete post.id;
+      this.firestore.doc('questoes/' + questao.id).update(questao);
+    }
+
+    deleteQuestao(questaoId: string){
+      
+      return new Promise((resolve, reject) => {
+        this.firestore.doc('questoes/' + questaoId).delete().then(() => {
+          resolve()
+        });
+      })  
+      
+    }
 }

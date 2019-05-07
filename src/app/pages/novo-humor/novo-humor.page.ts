@@ -58,10 +58,10 @@ export class NovoHumorPage implements OnInit {
   
       this.humorService.createHumor(humor).then(async () => {
         await loading.dismiss();
-        this.route.navigate(['/timeline-humor'])         
+        this.route.navigate(['/home'])         
       }).catch(async (err) => {
         await loading.dismiss();
-        this.route.navigate(['/timeline-humor'])
+        this.route.navigate(['/home'])
   
         const toast = await this.toastController.create({
           message: err,

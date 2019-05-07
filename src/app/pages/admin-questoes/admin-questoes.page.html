@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-left>Aprovar Perguntas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let questao of questoes">
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <div class="label-item-title">
+          <div style="display: flex; flex-direction: row">
+            <div style="width: 80%; flex-wrap: wrap">
+              Usuário: {{ questao.userName }}
+            </div>
+            <div>
+              <ion-button (click)="aprovar(questao)" size="small" color="success"
+                *ngIf="questao.status == 'Aguardando Aprovação'">
+                Aprovar
+                <ion-icon slot="end" name="md-thumbs-up"></ion-icon>
+              </ion-button>
+              <ion-button (click)="encerrar(questao)" size="small" color="danger" *ngIf="questao.status == 'Aprovada'">
+                Encerrar
+                <ion-icon slot="end" name="md-thumbs-down"></ion-icon>
+              </ion-button>
+              <ion-button (click)="excluir(questao)" size="small" color="medium" *ngIf="questao.status == 'Encerrada'">
+                Excluir
+                <ion-icon slot="end" name="md-close"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </div>
+        <div class="label-item-date">
+          Status: {{ questao.status }}
+        </div>
+        <div class="label-item-date">
+          Publicada em: {{ questao.publicadaEm | date:'dd/MM/yyyy HH:mm'}}
+        </div>
+        <div class="label-item-date">
+          Pergunta: {{ questao.titulo }}
+        </div>
+      </div>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
