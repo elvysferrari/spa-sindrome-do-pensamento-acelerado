@@ -43,7 +43,9 @@ export class AutoajudaPage implements OnInit {
         return a.publicadoEm > b.publicadoEm ? -1 : 1;
       });
 
-      await loading.dismiss();
+      setTimeout(async () => {
+        await loading.dismiss();
+      }, 2000) 
     }, async (error) => await loading.dismiss())
   }
 

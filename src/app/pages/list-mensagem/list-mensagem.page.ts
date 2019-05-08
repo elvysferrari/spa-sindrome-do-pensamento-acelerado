@@ -33,8 +33,11 @@ export class ListMensagemPage implements OnInit {
         } as Mensagem;
       });
       
+      setTimeout(async () => {
+        await loading.dismiss();
+      }, 2000) 
 
-      await loading.dismiss();
+      
     }, async (error) => await loading.dismiss()) 
 
   }

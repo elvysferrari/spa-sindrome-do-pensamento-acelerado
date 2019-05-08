@@ -53,7 +53,9 @@ export class ListVideosPage implements OnInit {
         i.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(i.vid_link);
       }
       this.videosFiltered = this.videos;
-      await loading.dismiss();
+      setTimeout(async () => {
+        await loading.dismiss();
+      }, 2000) 
 
     }, async (error) => await loading.dismiss())     
   }
