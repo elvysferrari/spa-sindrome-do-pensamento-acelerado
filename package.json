@@ -1,8 +1,8 @@
 {
   "name": "spa-sindrome-do-pensamento-acelerado",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Elvys Ferrari",
+  "homepage": "",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -5,24 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TimelineHumorPage } from './timeline-humor.page';
-import { ScrollHideDirectiveModule } from 'src/app/directives/scroll-hide.directive';
+import { SobrePage } from './sobre.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: TimelineHumorPage
+    component: SobrePage
   }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    ScrollHideDirectiveModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TimelineHumorPage]
+  declarations: [SobrePage]
 })
-export class TimelineHumorPageModule {}
+export class SobrePageModule {}

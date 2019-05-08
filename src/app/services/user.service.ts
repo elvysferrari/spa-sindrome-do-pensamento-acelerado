@@ -123,7 +123,7 @@ export class UserService {
       {
         title: 'Minhas Perguntas',
         url: '/minhas-questoes',
-        icon: 'help-circle-outline'
+        icon: 'ios-paper'
       },
       {
         title: 'Timeline',
@@ -134,6 +134,11 @@ export class UserService {
         title: 'Minha Conta',
         url: '/minha-conta',
         icon: 'person'
+      },
+      {
+        title: 'Sobre',
+        url: '/sobre',
+        icon: 'help-circle-outline'
       }]
   }
 
@@ -147,12 +152,12 @@ export class UserService {
       {
         title: 'Ajudar',
         url: '/questoes',
-        icon: 'md-happy'
+        icon: 'hand'
       },
       {
         title: 'Minhas Perguntas',
         url: '/minhas-questoes',
-        icon: 'help-circle-outline'
+        icon: 'ios-paper'
       },
       {
         title: 'Timeline',
@@ -163,6 +168,11 @@ export class UserService {
         title: 'Entrar',
         url: '/login',
         icon: 'person'
+      },
+      {
+        title: 'Sobre',
+        url: '/sobre',
+        icon: 'help-circle-outline'
       }]
   }
   updateUser(user: User) {

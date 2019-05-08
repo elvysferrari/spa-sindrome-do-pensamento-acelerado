@@ -4,6 +4,7 @@ import { HumorService } from 'src/app/services/humor.service';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import { ScrollHideConfig } from 'src/app/directives/scroll-hide.directive';
 
 @Component({
   selector: 'app-timeline-humor',
@@ -14,6 +15,9 @@ export class TimelineHumorPage implements OnInit {
   humores: Humor[] = [];
   user: User;
 
+  footerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-bottom', maxValue: undefined };
+  headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 54 };
+  
   constructor(private userService: UserService,
     private humorService: HumorService,
     public alertController: AlertController,
